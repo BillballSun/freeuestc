@@ -46,11 +46,26 @@ now = getTime();
 document.getElementById('marquee').innerHTML = now + now + now + now + now + now + now + now;
 document.getElementById('copy').innerHTML = now;
 document.getElementById('node').innerHTML = now;
-document.getElementById('user_name').innerHTML = Request["name"];
-if(text_type == 1)
+
+var RequestName = Request["name"];
+
+if(RequestName == null) 
+  document.getElementById('user_name').innerHTML = "孙润望";
+else 
+  document.getElementById('user_name').innerHTML = Request["name"];
+
+if(isNaN(text_type))
 	document.getElementById('text_type').innerHTML = "授权有效！";
-else
-	document.getElementById('text_type').innerHTML = "授权有效！";
+else if(text_type == 1) {
+  document.getElementById('text_type').innerHTML = "本科用户，授权有效！";
+  document.getElementById('user_style').innerHTML = "本科生";
+}
+else if(text_type == 2){
+  document.getElementById('text_type').innerHTML = "访客用户，授权有效！";
+  document.getElementById('user_style').innerHTML = "访客用户";
+}
+else document.getElementById('text_type').innerHTML = "授权有效！";
+
 var area=document.getElementById("box");
 var regObj = /\d+/;
 var tmpX = parseInt(regObj.exec(area.style.transform)[0])*-1;
