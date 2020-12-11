@@ -61,8 +61,8 @@ else if(text_type == 1) {
   document.getElementById('user_style').innerHTML = "本科生";
 }
 else if(text_type == 2){
-  document.getElementById('text_type').innerHTML = "访客用户，授权有效！";
-  document.getElementById('user_style').innerHTML = "访客用户";
+  document.getElementById('text_type').innerHTML = "校外用户，授权有效！";
+  document.getElementById('user_style').innerHTML = "校外访客";
 }
 else document.getElementById('text_type').innerHTML = "授权有效！";
 
