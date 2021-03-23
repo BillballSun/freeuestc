@@ -54,8 +54,10 @@ if(RequestName == null)
 else 
   document.getElementById('user_name').innerHTML = Request["name"];
 
-if(isNaN(text_type))
-	document.getElementById('text_type').innerHTML = "授权有效！";
+if(isNaN(text_type)) {
+	document.getElementById('text_type').innerHTML = "本科用户，入校登记成功！";
+  document.getElementById('user_style').innerHTML = "本科生";
+}
 else if(text_type == 1) {
   document.getElementById('text_type').innerHTML = "本科用户，授权有效！";
   document.getElementById('user_style').innerHTML = "本科生";
